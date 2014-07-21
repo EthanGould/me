@@ -16,3 +16,25 @@ body{
 .link-to-me{
   margin: 5px;
 }
+.block{
+  height: 400px;
+  width: 100%;
+  border: solid black 2px;
+}
+.top-box{
+  position: relative;
+  height: 350px;
+  width: 100%;
+  position: absolute;
+  border: solid black 2px;
+}
+#about{
+  position: absolute;
+  top: 25px;
+  left: 25px;
+}
+#skills{
+  position: absolute;
+  top: 25px;
+  right: -110px;
+}

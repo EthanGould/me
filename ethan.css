@@ -1,0 +1,18 @@
+body{
+  margin-top: 50px;
+}
+.contact{
+  height: 400px;
+  width: 100%;
+  border: solid black 2px;
+}
+.image-container{
+  height: 150px;
+  width: 150px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  border: solid black 2px;
+}
+.link-to-me{
+  margin: 5px;
+}

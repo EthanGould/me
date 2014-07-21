@@ -60,3 +60,17 @@ body{
   width: 100%;
   border-left: solid black 1px;
 }
+.label{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  border-bottom: solid black 1px;
+}
+h3{
+  color: green;
+}
+a:hover, a:visited{
+    text-decoration: none;
+    color: black;
+}

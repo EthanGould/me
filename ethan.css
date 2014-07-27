@@ -12,7 +12,7 @@ body{
   height: 150px;
   width: 150px;
   margin: 0 auto;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
   border: solid black 1px;
   background-image: url('image.jpg');
   background-size: 150px;
@@ -101,7 +101,7 @@ a:hover, a:visited{
   font-size: 18px;
 }
 li{
-  padding: 5px;
+  padding: 2px;
   color: #51A044;
 }
 .project-list li{
@@ -110,4 +110,8 @@ li{
 .screen-shot{
   height: 100px;
   width: 200px;
+}
+#resume{
+  background: #D3F1CE !important;
+  margin: 0;
 }

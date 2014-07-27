@@ -61,9 +61,6 @@ body{
   font-size: 38px;
   overflow: hidden;
 }
-.corner{
-/*  margin-top: 1px;*/
-}
 .lower-circle{
   right: -5px;
 }
@@ -73,6 +70,12 @@ body{
   width: 100%;
   text-align: center;
   border-bottom: solid black 1px;
+}
+.project-gallery{
+  overflow: scroll;
+  height: 350px;
+  background-color: #D3F1CE;
+  width: 100%;
 }
 #my-projects{
   text-align: center;
@@ -100,4 +103,7 @@ a:hover, a:visited{
 li{
   padding: 5px;
   color: #51A044;
+}
+.project-list li{
+  list-style-type: none;
 }

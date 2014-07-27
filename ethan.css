@@ -107,3 +107,7 @@ li{
 .project-list li{
   list-style-type: none;
 }
+.screen-shot{
+  height: 100px;
+  width: 200px;
+}

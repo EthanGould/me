@@ -1,6 +1,7 @@
 <!doctype html>
 <head>
 	<title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel='stylesheet' type='text/css' href='styles/main.css'>
   <script type="text/javascript" src='scripts/jquery.js'></script>
   <script type="text/javascript" src='scripts/main.js'></script>
@@ -16,23 +17,23 @@
         <ul>
       <!-- social contact links -->
           <li class="link-to-me" id="google">
-            <a href='https://plus.google.com/103565675340279447723/about/p/pub' class='hover-link' target="_blank"><img src='../google_icon.png' height='40' width='40'> Google+</a>
+            <a href='https://plus.google.com/103565675340279447723/about/p/pub' class='hover-link' target="_blank"><img src='../google_icon.png' height='40' width='40'><p>Google+</p></a>
           </li>
 
           <li class="link-to-me" id="github">
-            <a href='https://github.com/EthanGould' class='hover-link' target="_blank"><img src='../github_icon.png' height='40' width='40'> Github</a>
+            <a href='https://github.com/EthanGould' class='hover-link' target="_blank"><img src='../github_icon.png' height='40' width='40'><p>Github</p></a>
           </li>
 
           <li class="link-to-me" id="linkedin">
-            <a href='https://www.linkedin.com/in/ethangould' class='hover-link' target="_blank"><img src='../linkedin_icon.png' height='45' width='45'> LinkedIn</a>
+            <a href='https://www.linkedin.com/in/ethangould' class='hover-link' target="_blank"><img src='../linkedin_icon.png' height='45' width='45'><p>LinkedIn</p></a>
           </li>
 
           <li class="link-to-me" id="twitter">
-            <a href='https://twitter.com/907Ethan' class='hover-link' target="_blank"><img src='../twitter_icon.png' height='40' width='40'> Twitter</a>
+            <a href='https://twitter.com/907Ethan' class='hover-link' target="_blank"><img src='../twitter_icon.png' height='40' width='40'><p>Twitter</p></a>
           </li>
 
           <li class="link-to-me" id="email">
-            <a href='mailto:ethan.g.907@gmail.com' class='hover-link' target="_blank"><img src='../email.png' height='35' width='35'> Email</a>
+            <a href='mailto:ethan.g.907@gmail.com' class='hover-link' target="_blank"><img src='../email.png' height='35' width='35'><p>Email</p></a>
           </li>
         </ul>
 
@@ -44,22 +45,39 @@
 
 			<div class='content__right-col'>
         <div class='project-gallery'>
-          <div id='ECD' class='project-gallery__preview'>
-            <p class='project__title'>ECD</p>
-            <img class='project__img' src='../ECD.jpg'/>
-            <p class='project__stack'>Project Stack
-          </div>
 
           <div class='project-gallery__preview'>
             <p class='project__title'>IIJMO</p>
             <img class='project__img' src='../IIJMO.jpg'/>
-            <p class='project__stack'>Project Stack
+            <p class='project__notes'>"Is It Just Me, Or...?" is a blogging platform written in Ruby on Rails for people to write and read blogs</p>
+            <ul class='project__stack'>
+              <li id='ror'>Ruby on Rails</li>
+              <li id='pg'>PostgreSQL</li>
+              <li id='js'>JavaScript</li>
+            </ul>
+          </div>
+
+          <div id='ECD' class='project-gallery__preview'>
+            <p class='project__title'>ECD</p>
+            <img id='ECD' class='project__img' src='../ECD.jpg'/>
+            <p class='project__notes'>This project displays energy consumption levels of multiple energy sectors of all 50 states beautifully using the d3.js library</p>
+            <ul class='project__stack'>
+              <li id='ror'>Ruby on Rails</li>
+              <li id='pg'>PostgreSQL</li>
+              <li id='d3'>D3.js</li>
+              <li id='js'>JavaScript</li>
+            </ul>
           </div>
 
           <div class='project-gallery__preview'>
             <p class='project__title'>SA</p>
             <img class='project__img' src='../SA.jpg'/>
-            <p class='project__stack'>Project Stack
+            <p class='project__notes'>Snack Attack is used to get nutritional values of raw and packaged foods you may find while out shopping for groceries</p>
+            <ul class='project__stack'>
+              <li id='ror'>Ruby on Rails</li>
+              <li id='pg'>PostgreSQL</li>
+              <li id='js'>JavaScript</li>
+            </ul>
           </div>
         </div>
 

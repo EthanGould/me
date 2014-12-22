@@ -1,10 +1,6 @@
-body {
-	margin: 0 auto;
-}
-
 .content {
 	/*display: inline-block;*/
-	margin: 0 10%;
+	margin: 0 auto;
 }
 
 .header {
@@ -14,35 +10,46 @@ body {
 }
 
 .header h3 {
-	margin: 15px 0;
+	margin: 5px 0;
 	text-align: center;
 }
 
 .content__left-col {
-	width: 20%;
-	max-width: 300px;
-	min-width: 200px;
-	height: 600px;
+	width: 100%;
 	float: left;
 	background: #55c7fc;
-	padding: 15px;
+	padding: 0px;
 	box-sizing: border-box;
 }
 
 .content__left-col ul {
+	text-align: center;
+}
+
+ul {
 	list-style: none;
 	padding: 0;
+	margin: 0;
+}
+
+p {
+	margin: 0;
 }
 
 .content__right-col {
-	width:;
-	margin-left: 230px;
+	width: 100%;
+	float: left;
 	box-sizing: border-box;
 }
 
 .link-to-me {
+	display: inline-block;
 	border-radius: 5px;
 	padding: 5px;
+}
+
+.link-to-me:hover {
+	background: #10a7ed;
 }
 
 .link-to-me a {
@@ -51,11 +58,16 @@ body {
   text-align: right;
 }
 
+.link-to-me p {
+	display: none;
+}
+
 .link-to-me img {
 	vertical-align: middle;
 }
 
 .profile-pic {
+	display: none;
 	height: 100px;
 	width: 100px;
 	border-radius: 50%;
@@ -68,9 +80,10 @@ body {
 
 .project-gallery__preview {
 	float: left;
-	width: 50%;
+	width: 100%;
+	height: 100%;
+	padding: 25px;
 	box-sizing: border-box;
-	padding: 15px 0 15px 15px;
 }
 
 .project__title {
@@ -81,14 +94,96 @@ body {
 }
 
 .project__img {
+	margin-bottom: 10px;
 	width: 100%;
 	height: 100%;
 	border: 1px solid lightgrey;
 	box-sizing: border-box;
 }
 
+/*#ECD {*/
+/*	padding-bottom: 4px;
+}*/
+
 .project__img:hover {
-	border: 2px solid #10a7ed;
+	border: 1px solid #10a7ed;
 }
+
+.project__stack li {
+	display: inline-block;
+	padding: 5px;
+	margin-bottom: 5px;
+	font-size: 12px;
+}
+
+.project__notes {
+	margin-bottom: 10px;
+}
+
+#ror {
+	background: #ef2b2b;
+	color: white;
+}
+
+#pg {
+	background: #00a9ff;
+	color: white;
+}
+
+#js {
+	background: #f9f913;
+}
+
+#d3 {
+	background: #1dc428;
+	color: white;
+}
+
+
+
+@media screen and (min-width: 600px){
+
+	.project-gallery__preview {
+		float: left;
+		width: 50%;
+		height: 100%;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+}
+
+@media screen and (min-width: 860px){
+	
+	.content__left-col {
+		float: left;
+		width: 20%;
+		height: 700px;
+		padding: 10px;
+	}
+
+	.content__right-col {
+		width: 80%;
+		padding: 15px;
+		
+	}
+
+	.profile-pic {
+		display: block;
+		margin: 0 auto;
+	}
+
+	.link-to-me {
+		float: left;
+		width: 100%;
+		box-sizing: border-box;
+		text-align: left;
+	}
+
+	.link-to-me p {
+		display: inline-block;
+	}
+
+}
+
 
 

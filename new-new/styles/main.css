@@ -2,6 +2,17 @@ body {
 	margin: 0;
 }
 
+p {
+	margin: 0;
+}
+
+
+/*
+ *---------------------------
+ * SITE HEADER
+ *---------------------------
+*/
+
 .site-header {
   height: 75px;
   background-color: lightgrey;
@@ -26,7 +37,6 @@ body {
 	font-family: 'Ubuntu', sans-serif;
 	font-weight: 300;
 	color: white;
-	/*text-shadow: 0px 0px 3px black;*/
 	font-size: 20px;
 }
 
@@ -70,7 +80,149 @@ body {
 	background-color: rgb(70,150,70);
 }
 
-@media (min-width: 768px) {
+/*
+ *---------------------------
+ * /SITE HEADER
+ *---------------------------
+*/
+
+/*
+ *---------------------------
+ * SITE CONTENT
+ *---------------------------
+*/
+.site-content {
+	margin-top: 10px;
+	padding: 5px 5px;
+	overflow: auto;
+}
+
+/*
+ *---------------------------
+ * /SITE CONTENT
+ *---------------------------
+*/
+
+
+/*
+ *---------------------------
+ * CONTENT CARDZ
+ *---------------------------
+*/
+
+.content-card {
+	width: 100%;
+	box-shadow: 0 0 2px grey;
+	padding: 10px;
+	margin-bottom: 15px;
+
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 14px;
+	display: inline-block;
+	box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+/*
+ *---------------------------
+ * /CONTENT CARD
+ *---------------------------
+*/
+
+
+/*
+ * location Card
+*/
+
+.location-card {
+	max-width: 290px;
+	float: left;
+}
+
+.info--location {
+	font-size: 14px;
+}
+
+.info--bio {
+	margin-top: 10px;
+}
+
+.info-title {
+	color: black;
+	text-decoration: underline;
+}
+
+.info-content {
+	color: grey;
+	line-height: 20px;
+}
+
+/*
+ * skillset Card
+*/
+
+.skillset-card {
+	clear: both;
+}
+
+.skillset-examples {
+	padding-left: 80px;
+}
+
+.skillset-img {
+	width: 50px;
+	border-radius: 10px;
+	float: left;
+}
+
+
+/*
+ * projects Card
+*/
+
+.project-detail {
+    width: 100%;
+    border: 1px solid lightgrey;
+    float: left;
+    padding: 10px;
+	position: relative;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+.project-detail-title {
+	text-align: center;
+	font-size: 18px;
+}
+
+.project-detail-list {
+	color: grey;
+}
+
+.project-detail-img {
+	width: 100%;
+}
+
+.projects-card-title {
+	margin-bottom: 15px;
+}
+
+
+
+
+@media (min-width: 650px) {
+	/*
+ 	 *---------------------------
+ 	 * SITE HEADER
+ 	 *---------------------------
+	*/
 
 	.site-header {
 		height: 100px;
@@ -102,7 +254,86 @@ body {
 		margin: 0;
 		float: right;
 	}
+	/*
+ 	 *---------------------------
+ 	 * /SITE HEADER
+ 	 *---------------------------
+	*/
+
+	/*
+	 *---------------------------
+	 * SITE CONTENT
+	 *---------------------------
+	*/
+	.site-content {
+		max-width: 960px;
+    	margin: 50px auto 0 auto;
+    	padding: 5px 15px;
+	}
+
+	/*
+	 *---------------------------
+	 * /SITE CONTENT
+	 *---------------------------
+	*/
+
+	/*
+	 *---------------------------
+	 * CONTENT CARD
+	 *---------------------------
+	*/
+	.content-card {
+		margin-left: 15px;
+	}
+
+	/*
+	 *---------------------------
+	 * /CONTENT CARD
+	 *---------------------------
+	*/
+
+	/*
+	 * location Card
+	*/
+
+	.location-card {
+		max-width: 200px;
+	}
+
+	/*
+	 * skillset Card
+	*/
+
+	.right-col-card {
+		float: right;
+		width: calc(100% - 240px);
+		clear: none;
+	}
+
 }
+
+
+@media (min-width: 768px) {
+	
+
+
+	/*
+	 * projects Card
+	*/
+
+	.project-detail {
+	    width: 49%;
+	    min-height: 330px;
+	}
+
+	.project-detail:nth-child(even) {
+		margin-right: 2%;
+	}
+
+
+
+}
+
 
 
 

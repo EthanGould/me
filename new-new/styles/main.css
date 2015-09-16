@@ -68,12 +68,12 @@ p {
     text-decoration: none;
 }
 
-#github {
-	background-color: rgb(200,100,100);
+#googleplus {
+	background-color: rgb(220,60,60);
 }
 
 #linkedin {
-	background-color: rgb(80,80,170);
+	background-color: rgb(80,130,190);
 }
 
 #email {
@@ -112,7 +112,7 @@ p {
 
 .content-card {
 	width: 100%;
-	box-shadow: 0 0 2px grey;
+	box-shadow: 0 0 6px lightgrey;
 	padding: 10px;
 	margin-bottom: 15px;
 
@@ -120,11 +120,15 @@ p {
 	font-size: 14px;
 	display: inline-block;
 	box-sizing: border-box;
+	/*background-color: rgb(240,240,240);*/
+	background-color: white;
+
+
+	transition: all .3s ease-in-out;
+	-webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
 }
-
-
-
-
 
 
 
@@ -195,6 +199,7 @@ p {
 	position: relative;
     box-sizing: border-box;
     margin-bottom: 15px;
+    background-color: white;
 }
 
 .project-detail-title {
@@ -321,6 +326,10 @@ p {
 
 @media (min-width: 768px) {
 	
+	.content-card:hover {
+		/*box-shadow: 0 0 5px grey;*/
+		transform: scale(1.01);
+	}
 
 
 	/*

@@ -1,3 +1,8 @@
+html {
+	background-color: dimgrey;
+	min-width: 290px;
+}
+
 body {
 	margin: 0;
 }
@@ -16,16 +21,24 @@ p {
 .site-header {
   height: 75px;
   background-color: lightgrey;
-  position: relative;
+  position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+	box-shadow: 2px 2px 8px #333;
+	min-width: 290px;
 }
 
 .site-header-top {
 	height: 40px;
-	background-color: rgba(150,150,150,0.5);
+	background-color: #333;
 }
 
 .site-header-bottom {
 	background-color: lightgrey;
+	box-shadow: 2px 2px 8px #333;
+
 }
 
 
@@ -47,6 +60,7 @@ p {
     top: 4px;
     left: 5px;
     border: 1px solid white;
+    box-shadow: 0 2px 5px black;
 }
 
 .site-header__social-bar {
@@ -92,7 +106,7 @@ p {
  *---------------------------
 */
 .site-content {
-	margin-top: 10px;
+	margin-top: 100px;
 	padding: 5px 5px;
 	overflow: auto;
 }
@@ -112,7 +126,7 @@ p {
 
 .content-card {
 	width: 100%;
-	box-shadow: 0 0 6px lightgrey;
+	box-shadow: 3px 3px 5px #333;
 	padding: 10px;
 	margin-bottom: 15px;
 
@@ -199,7 +213,7 @@ p {
 	position: relative;
     box-sizing: border-box;
     margin-bottom: 15px;
-    background-color: white;
+    background-color: floralwhite;
 }
 
 .project-detail-title {
@@ -278,7 +292,7 @@ p {
 	*/
 	.site-content {
 		max-width: 960px;
-    	margin: 50px auto 0 auto;
+    	margin: 150px auto 0 auto;
     	padding: 5px 15px;
 	}
 

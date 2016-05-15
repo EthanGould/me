@@ -61,37 +61,7 @@ p {
     left: 5px;
     border: 1px solid white;
     box-shadow: 0 2px 5px black;
-}
-
-.site-header__social-bar {
-	display: inline-block;
-    float: left;
-    margin: 5px 0 0 80px;
-}
-
-.social-bar-button {
-	display: inline-block;
-	padding: 3px 6px;
-	border: 1px solid white;
-	color: white;
-	font-family: 'Ubuntu', sans-serif;
-    font-size: 14px;
-    border-radius: 5px;
-    font-weight: 100;
-
-    text-decoration: none;
-}
-
-#googleplus {
-	background-color: rgb(220,60,60);
-}
-
-#linkedin {
-	background-color: rgb(80,130,190);
-}
-
-#email {
-	background-color: rgb(70,150,70);
+    transition: .2s;
 }
 
 /*
@@ -134,14 +104,108 @@ p {
 	font-size: 14px;
 	display: inline-block;
 	box-sizing: border-box;
-	/*background-color: rgb(240,240,240);*/
 	background-color: white;
+	transform: scale(1);
+}
+
+/*
+ *---------------------------
+ * CONTACT
+ *---------------------------
+*/
 
 
-	transition: all .3s ease-in-out;
-	-webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
+.contact-list {
+	list-style: none;
+	padding: 0;
+}
+
+.flipup-button {
+	display: inline-block;
+	width: 100%;
+	position: relative;
+	text-decoration: none;
+	border-radius: 3px;
+	overflow: hidden;
+	color: black;
+}
+
+.flipup-button:hover p {
+	color: white;
+	transition: color 0.25s;
+}
+
+.flipup-container {
+	padding: 10px 15px;
+	position: relative;
+}
+
+.flipup-box {
+	width: 100%;
+}
+
+#googleplus .flipup-box {
+	width: 100%;
+	background-color: #dd4b39;
+}
+
+#linkedin .flipup-box {
+	width: 100%;
+	background-color: #4875B4;
+}
+
+#email .flipup-box {
+	width: 100%;
+	background-color: green;
+}
+
+.flipup-text {
+	margin: 0;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 14px;
+}
+
+.slideup {
+	animation-name: slideup;
+	animation-fill-mode: forwards;
+	animation-duration: .25s;
+}
+
+.slidedown {
+	animation-name: slidedown;
+	animation-fill-mode: forwards;
+	animation-duration: .15s;
+}
+
+@keyframes slideup {
+	
+	from {
+		position: absolute;
+		bottom: 0;
+	}
+
+	to {
+		position: absolute;
+    height: 101%;
+    margin-top: -36px;
+    z-index: -1;
+	}
+}
+
+@keyframes slidedown {
+
+	from {
+		position: absolute;
+		margin-top: -36px;
+		width: 100%;
+		height: 100%;
+	}
+
+	to {
+		position: absolute;
+		margin-top: 0px;
+		height: 100%;
+	}
 }
 
 
@@ -342,7 +406,7 @@ p {
 	
 	.content-card:hover {
 		/*box-shadow: 0 0 5px grey;*/
-		transform: scale(1.01);
+		transform: scale(1);
 	}
 
 

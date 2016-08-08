@@ -57,12 +57,26 @@ p {
 	width: 65px;
 	border-radius: 50%;
 	position: absolute;
-    top: 4px;
-    left: 5px;
-    border: 1px solid white;
-    box-shadow: 0 2px 5px black;
-    transition: .2s;
+  top: 4px;
+  left: 5px;
+  border: 1px solid white;
+  box-shadow: 0 2px 5px black;
+  animation-play-state: paused; 
+
+	animation-name: spin;
+	animation-fill-mode: forwards;
+	animation-duration: .5s;
+	animation-timing-function: linear;
 }
+
+.site-header__img:hover {
+	animation-name: spin;
+	animation-fill-mode: forwards;
+	animation-duration: 20s;
+	animation-play-state: running; 
+
+}
+
 
 /*
  *---------------------------
@@ -165,12 +179,6 @@ p {
 	font-size: 14px;
 }
 
-.spin {
-	animation-name: spin;
-	animation-fill-mode: forwards;
-	animation-duration: .5s;
-}
-
 .slideup {
 	animation-name: slideup;
 	animation-fill-mode: forwards;
@@ -184,13 +192,16 @@ p {
 }
 
 @keyframes spin {
-	from {
+
+	100% {transform: rotate(20turn); }
+
+/*	from {
 		transform: rotate(0deg);
 	}
 
 	to {
 		transform: rotate(360deg);
-	}
+	}*/
 }
 
 @keyframes slideup {

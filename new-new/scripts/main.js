@@ -10,14 +10,4 @@ $(document).ready( function() {
 		$(this).find('.flipup-box').removeClass('slideup');
 		$(this).find('.flipup-box').addClass('slidedown');
 	});
-
-	// spinning profile picture
-	$('.site-header__img').mouseover(function() {
-		var $this = $(this);
-		$this.addClass('spin');
-		setTimeout(function() {
-			$this.removeClass('spin');
-		}, 500);
-	});
-
 });

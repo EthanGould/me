@@ -27,17 +27,19 @@ p {
 	z-index: 2;
 	box-shadow: 2px 2px 8px #333;
 	min-width: 290px;
+	transition: height 0.3s;
 }
 
 .site-header-top {
 	height: 40px;
 	background-color: #333;
+	transition: height 0.3s;
+
 }
 
 .site-header-bottom {
 	background-color: lightgrey;
 	box-shadow: 2px 2px 8px #333;
-
 }
 
 
@@ -50,6 +52,7 @@ p {
 	font-weight: 300;
 	color: white;
 	font-size: 20px;
+	transition: all 0.3s;
 	-webkit-box-reflect: below -10px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent), to(rgba(250, 250, 250, 0.5)));
 }
 
@@ -61,14 +64,14 @@ p {
   left: 5px;
   border: 1px solid white;
   box-shadow: 0 2px 5px black;
+  transition: all 0.3s;
 }
 
 .site-header__img:hover {
 	animation-name: spin;
 	animation-fill-mode: forwards;
-	animation-duration: 1s;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
+	animation-duration: .5s;
+	animation-timing-function: ease-in-out;
 }
 
 
@@ -179,7 +182,7 @@ p {
 
 @keyframes spin {
 	to {
-		transform: rotate(1turn);
+		transform: rotate(2turn);
 	}
 }
 
@@ -402,7 +405,34 @@ p {
 		margin-right: 2%;
 	}
 
+	.site-header.minimize {
+	/*	animation-name: minimize;
+		animation-duration: 0.3s;
+		animation-fill-mode: forwards;*/
 
+		height: 50px;
+		transition: height 0.3s;
+	}
+
+	.site-header.minimize .site-header-top {
+		height: 40px;
+		transition: height 0.3s;
+	}
+
+	.site-header.minimize .site-header__name  {
+		padding-top: 10px;
+		font-size: 20px;
+		transition: all 0.3s;
+		-webkit-box-reflect: below -7px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent), to(rgba(250, 250, 250, 0.5)));
+	}
+
+	.site-header.minimize .site-header__img  {
+		width: 40px;
+		top: 4px;
+		left: 150px;
+		/*transform: rotate(1turn);*/
+		transition: all 0.3s;
+	}
 
 }
 

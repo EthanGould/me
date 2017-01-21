@@ -266,14 +266,13 @@ p {
 	position: relative;
     box-sizing: border-box;
     margin-bottom: 15px;
-    background-color: floralwhite;
+    background-color: ghostwhite;
 }
 
 .project-detail-title {
 	text-align: center;
 	font-size: 18px;
 	color: black;
-	text-decoration: none;
 }
 
 .project-detail-title:hover{
@@ -282,6 +281,10 @@ p {
 
 .project-detail-list {
 	color: grey;
+}
+
+.project-detail-list-item {
+	margin-bottom: 5px;
 }
 
 .project-detail-img {
@@ -396,14 +399,14 @@ p {
 	 * projects Card
 	*/
 
-	.project-detail {
+/*	.project-detail {
 	    width: 49%;
 	    min-height: 330px;
-	}
-
+	}*/
+/*
 	.project-detail:nth-child(even) {
 		margin-right: 2%;
-	}
+	}*/
 
 	.site-header.minimize {
 	/*	animation-name: minimize;

@@ -167,7 +167,7 @@ p {
 
 @keyframes spin {
 	to {
-		transform: rotate(2turn);
+		transform: rotate(1turn);
 	}
 }
 
@@ -269,6 +269,169 @@ p {
 .projects-card-title {
 	margin-bottom: 15px;
 }
+
+
+
+/*
+ *---------------------------
+ * / SAMPLES
+ *---------------------------
+*/
+
+.sample {
+	margin-bottom: 100px;
+}
+
+.sample-title h2 {
+	display: inline-block;
+	margin-left: -10px;
+	padding: 5px 10px;
+	color: white;
+	background-color: black;
+}
+
+
+/*
+ * clock sample
+ */
+
+.clock {
+	width: 220px;
+	height: 220px;
+	border: 3px solid black;
+	border-radius: 50%;
+	transform: rotate(90deg);
+	box-shadow: 2px 0px 10px gray;
+	background: radial-gradient(white 20%, lightgray 50%, darkgray 70%);
+}
+
+.clock-hands {
+	position: relative;
+	margin: 10px 0 10px 10px;
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+}
+
+.clock-hands:after {
+	display: inline-block;
+	content: "";
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	left: 47%;
+	top: 49%;
+	z-index: 100;
+	background-color: tomato;
+	border-radius: 50%;
+}
+
+
+.clock-arm {
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	width: 50%;
+	height: 5px;
+	transition: all 0.1s;
+	transition-timing-function: cubic-bezier(0.42, 0, 0, 2.48);
+	transform-origin: 100%;
+}
+
+.clock-arm.seconds {
+	background-color: tomato;
+	z-index: 2;
+}
+
+.clock-arm.minutes {
+	background-color: #8f8f8f;
+}
+
+.clock-arm.hours {
+	background-color: black;
+}
+
+.clock-arm.hours:after {
+	display: block;
+	content: '';
+	background-color: gray;
+	width: 20px;
+}
+
+/*
+ * Share tools
+ */
+
+.share-tools {
+  position: relative;
+  display: inline-block;
+  overflow: hidden; }
+  .share-tools__btns-wrap {
+    transform: translateX(10%);
+    padding-right: 70px;
+    overflow: hidden; }
+  .share-tools__btns {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 1s;
+    animation-name: collapse;
+    animation-duration: 1s;
+    animation-fill-mode: forwards; }
+    .share-tools__btns:hover {
+      animation-play-state: paused; }
+  .share-tools__btn {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid black;
+    color: black;
+    text-align: center;
+    cursor: pointer; }
+    .share-tools__btn.trigger {
+      position: absolute;
+      z-index: 100; }
+      .share-tools__btn.trigger:hover {
+        transform: rotate(1turn);
+        transition: transform 1s; }
+    .share-tools__btn#facebook {
+      background-color: steelblue; }
+    .share-tools__btn#twitter {
+      background-color: skyblue; }
+    .share-tools__btn#google {
+      background-color: tomato; }
+  .share-tools__btn.trigger:hover ~ .share-tools__btns-wrap .share-tools__btns {
+    padding-left: 64px;
+    animation-name: expand;
+    animation-duration: 1s;
+    animation-fill-mode: forwards; }
+
+@keyframes expand {
+  0% {
+    opacity: 0; }
+  90% {
+    opacity: 1; }
+  100% {
+    transform: translateX(-12%);
+    opacity: 1;
+    z-index: 100; } }
+@keyframes collapse {
+  0% {
+    transform: translateX(19%);
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+
+
+/*
+ *---------------------------
+ * /SAMPLES
+ *---------------------------
+*/
+
 
 @media (min-width: 750px) {
 	/*
@@ -383,6 +546,7 @@ p {
 		min-height: 120px;
 	}
 }
+
 
 @media (min-width: 1040px) {
 	.site-header.minimize .content-header__text {

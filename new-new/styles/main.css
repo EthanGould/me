@@ -125,14 +125,14 @@ p {
 */
 
 .content-card {
-	width: 100%;
+	width: 95%;
 	box-shadow: 3px 3px 5px #333;
 	padding: 10px;
-	margin-bottom: 15px;
+	margin: 0 auto 15px auto;
+	display: table;
 
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 14px;
-	display: inline-block;
 	box-sizing: border-box;
 	background-color: white;
 }
@@ -147,6 +147,8 @@ p {
 .contact-list {
 	list-style: none;
 	padding: 0;
+	width: 95%;
+	margin: 0 auto;
 }
 
 .contact-list__button {

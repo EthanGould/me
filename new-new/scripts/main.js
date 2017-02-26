@@ -9,9 +9,9 @@ $(window).scroll( function() {
 var updateTime = function() {
 	var time, seconds, minutes, hour;
 	time = new Date();
-	seconds = time.getSeconds()/60*360;
-	minutes = time.getMinutes()/60*360;
-	hour = time.getHours(); // 24hr format
+	seconds = (time.getSeconds()/60)*360;
+	minutes = (time.getMinutes()/60)*360;
+	hour = (time.getHours()/12)*360;
 
 	var secondsHand = document.querySelector('.clock-arm.seconds');
 	var minutesHand = document.querySelector('.clock-arm.minutes');

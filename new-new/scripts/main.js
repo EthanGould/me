@@ -6,16 +6,17 @@ $(window).scroll( function() {
 	$('.site-header').removeClass('minimize');
 });
 
-var updateTime = function() {
-	var time, seconds, minutes, hour;
-	time = new Date();
-	seconds = (time.getSeconds()/60)*360;
-	minutes = (time.getMinutes()/60)*360;
-	hour = (time.getHours()/12)*360;
 
-	var secondsHand = document.querySelector('.clock-arm.seconds');
-	var minutesHand = document.querySelector('.clock-arm.minutes');
-	var hourHand = document.querySelector('.clock-arm.hours');
+// The clock JS
+var updateTime = function() {
+	var time = new Date(),
+			seconds = (time.getSeconds()/60)*360,
+			minutes = (time.getMinutes()/60)*360,
+			hour = (time.getHours()/12)*360;
+
+	var secondsHand = document.querySelector('.seconds'),
+			minutesHand = document.querySelector('.minutes'),
+			hourHand = document.querySelector('.hours');
 
 	secondsHand.style.transform = 'rotate(' + seconds + 'deg)';
 	minutesHand.style.transform = 'rotate(' + minutes + 'deg)';

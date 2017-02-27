@@ -151,7 +151,7 @@ p {
 }
 
 .contact-list__btn:hover {
-	transform: scale(1.03);
+	color: lightgray;
 }
 
 .contact-list__btn {
@@ -162,7 +162,7 @@ p {
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 14px;
 	color: white;
-	transition: transform 0.3s;
+	transition: color 0.3s;
 }
 
 .contact-list__btn i {
@@ -434,6 +434,7 @@ p {
 	transform: rotate(1turn);
 	transition: transform 0.5s;
 }
+
 .share-tools--active:hover { display: inline-block; }
 
 .share-tools--active .share-tools__btns {

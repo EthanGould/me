@@ -150,6 +150,10 @@ p {
 	margin: 0 auto;
 }
 
+.contact-list__btn:hover {
+	transform: scale(1.03);
+}
+
 .contact-list__btn {
 	display: inline-block;
 	float: left;
@@ -158,6 +162,7 @@ p {
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 14px;
 	color: white;
+	transition: transform 0.3s;
 }
 
 .contact-list__btn i {
@@ -384,6 +389,7 @@ p {
 
 .share-tools__btns-wrap {
 	overflow: hidden;
+	padding-right: 8px;
 }
 
 .share-tools__btns {
@@ -391,7 +397,8 @@ p {
 	transform: translateX(-100%);
 	transition: transform 1s;
 	animation-name: collapse;
-	animation-duration: 1s;
+	animation-duration: 0.8s;
+	animation-timing-function: cubic-bezier(0.39, 0.91, 0.42, 0.95)
 	animation-fill-mode: forwards;
 }
 
@@ -400,35 +407,57 @@ p {
 	float: left;
 	width: 20px;
 	height: 20px;
-	padding: 20px;
+	padding: 23px 20px 17px;
 	border-radius: 50%;
-	background-color: white;
-	border: 1px solid black;
+	background-color: lightgray;
+	border: 2px solid gray;
 	color: black;
 	text-align: center;
 	cursor: pointer;
-	transition: transform 1s;
+	margin-right: 3px;
 }
 
-.share-tools__btn#facebook { background-color: steelblue; }
-.share-tools__btn#twitter { background-color: skyblue; }
-.share-tools__btn#google { background-color: tomato; }
+.share-tools__btn#facebook {
+	background-color: steelblue;
+	border: 2px solid #315a7d;
+}
+.share-tools__btn#twitter {
+	background-color: skyblue;
+	border: 2px solid #6ca4c8;
+}
+.share-tools__btn#google {
+	background-color: tomato;
+	border: 2px solid #cc1f00;
+}
 
-.share-tools__trigger:hover { transform: rotate(1turn); }
+.share-tools__trigger:hover {
+	transform: rotate(1turn);
+	transition: transform 0.5s;
+}
 .share-tools--active:hover { display: inline-block; }
 
 .share-tools--active .share-tools__btns {
 	padding-left: 25px;
 	animation-name: expand;
-	animation-duration: 1s;
+	animation-duration: 0.5s;
+	animation-timing-function: cubic-bezier(0, 0.81, 0.6, 1.17);
 	animation-fill-mode: forwards;
+}
+
+.share-tools__btn i {
+	transition: transform 0.3s;
+	color: white;
+}
+
+.share-tools--active .share-tools__btn:not(.share-tools__trigger):hover i {
+	transform: scale(1.2);
 }
 
 @keyframes expand {
   0% { opacity: 0; }
   90% { opacity: 1; }
   100% {
-    transform: translateX(-12%);
+    transform: translateX(-11%);
     opacity: 1;
     z-index: 100;
 	}
@@ -439,7 +468,7 @@ p {
     transform: translateX(0);
     opacity: 1;
   }
-  100% { opacity: 0; }
+  30% { opacity: 0; }
 }
 
 

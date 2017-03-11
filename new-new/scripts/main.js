@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	/**
 	 * Hide the social share tools.
 	 */
-	module.hideShareTools = function() {
+	module.hideShareTools = function(event) {
 		var classList = module.shareTools.classList
 		var hoveringFromSelf = event.fromElement == document.querySelector('.js-share-btns > *');
 		

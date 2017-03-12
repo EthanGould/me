@@ -129,7 +129,6 @@ p {
 	padding: 10px;
 	margin: 0 auto 15px auto;
 	display: table;
-
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 14px;
 	box-sizing: border-box;
@@ -289,6 +288,84 @@ p {
 	margin-bottom: 15px;
 }
 
+.footer {
+	background-color: lightgray;
+	padding: 50px 10px;
+}
+
+.footer__links {
+	display: column;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	list-style: none;
+}
+
+.footer__link {
+	display: block;
+	color: #333;
+	text-decoration: none;
+	font-size: 18px;
+	font-family: sans-serif;
+	padding: 6px 8px;
+	background-color: white;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.footer__link:hover {
+	background-color: #eee;
+}
+
+.footer__link-box {
+	flex: 1;
+	margin-bottom: 30px;
+	position: relative;
+	clear: left;
+}
+
+.footer__link-box:before {
+	left: 0;
+}
+
+.footer__link-box:after {
+	right: 0;
+}
+
+.footer__link-wrap {
+	height: 100px;
+	width: 100px;
+	margin: -40px auto 70px;
+	float: left;
+	border-radius: 50%;
+	border: 2px solid lightgray;
+	background: linear-gradient(to left bottom, lightgray, #555 60%);
+	box-shadow: 0 5px 10px #333;
+	animation: float 2s infinite linear;
+}
+
+.footer__link-wrap:hover {
+}
+
+.footer__link-wrap i {
+	font-size: 50px;
+	margin-top: 25px;
+	color: white;
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 10px #333;
+	}
+	
+	50% {
+		box-shadow: 0 10px 15px #333;
+	}
+
+	100% {
+		box-shadow: 0 5px 10px #333;
+	}
+}
 
 
 /*
@@ -693,6 +770,40 @@ p {
 	*/
 
 	/*
+ 	 *---------------------------
+ 	 * SITE FOOTER
+ 	 *---------------------------
+	*/
+
+
+	.footer__link-wrap {
+		height: 200px;
+		width: 200px;
+		margin: 0 auto 30px;
+		float: none;
+	}
+
+	.footer__links {
+		display: flex;
+	}
+
+	.footer__link-box:nth-child(2):before,
+	.footer__link-box:nth-child(2):after {
+		content: '';
+		height: 100px;
+		width: 1px;
+		display: inline-block;
+		position: absolute;
+		top: 25%;
+		background-color: gray;
+	}
+
+	.footer__link-wrap i {
+		font-size: 100px;
+		margin-top: 50px;
+	}
+
+	/*
 	 *---------------------------
 	 * SITE CONTENT
 	 *---------------------------
@@ -740,6 +851,8 @@ p {
 		min-height: 120px;
 	}
 }
+
+
 
 
 @media (min-width: 1040px) {

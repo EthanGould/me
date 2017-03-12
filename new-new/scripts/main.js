@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		module.shareTools = document.querySelector('.js-share-tools');
 		module.shareToolsBtn = document.querySelector('.js-share-btn');
 		module.siteHeader = document.querySelector('.js-site-header');
+		module.hamburgerMenu = document.querySelector('.hamburger');
 
 		module.updateClock();
 		module.eventHandlers();
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	module.eventHandlers = function() {
 		module.shareToolsBtn.addEventListener('mouseenter', module.showShareTools);
 		module.shareTools.addEventListener('mouseleave', module.hideShareTools);
+		module.hamburgerMenu.addEventListener('click', module.toggleHamburger);
 		window.addEventListener('scroll', module.scaleHeader);
 	}
 
@@ -64,6 +66,15 @@ document.addEventListener('DOMContentLoaded', function() {
 			hourHand.style.transform = 'rotate(' + hour + 'deg)';
 		}, 1000);
 	};
+
+	/**
+	 * Toggle state of hamburger menu.
+	 */
+	module.toggleHamburger = function() {
+		document
+			.querySelector('.hamburger-menu')
+			.classList.toggle('open');
+	}
 
 	/**
 	 * Scale header elements after scrolling down.

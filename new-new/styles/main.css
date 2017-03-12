@@ -298,7 +298,7 @@ p {
 */
 
 .sample {
-	margin-bottom: 100px;
+	margin-bottom: 150px;
 }
 
 .sample-title h2 {
@@ -475,6 +475,148 @@ p {
     opacity: 1;
   }
   30% { opacity: 0; }
+}
+
+
+/*
+ * Hamburger Menu
+ */
+
+.hamburger {
+	position: relative;
+	height: 26px;
+	width: 40px;
+	padding-left: 5px;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+
+.hamburger__bar {
+	position: absolute;
+	display: block;
+	width: 40px;
+	height: 5px;
+	margin: 0 auto;
+	background-color: black;
+	transition: color 0.3s;
+}
+
+.open .hamburger__bar {
+	background-color: #f44242;
+}
+
+.hamburger #top {
+	top: 0;
+	animation: resetRight 0.5s;
+	animation-fill-mode: forwards;
+}
+
+.hamburger #middle {
+	top: 10px;
+	opacity: 1;
+	transition: opacity 0.7s;
+}
+.hamburger #bottom {
+	top: 20px;
+	animation: resetLeft 0.5s;
+	animation-fill-mode: forwards;
+}
+
+.open #top {
+	animation: leftX 0.5s;
+	animation-fill-mode: forwards;
+}
+
+.open #middle {
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+.open #bottom {
+	animation: rightX 0.5s;
+	animation-fill-mode: forwards;
+}
+
+.hamburger-menu__items {
+	transition: all 2s;
+	display: none;
+}
+
+.open .hamburger-menu__items {
+	display: block;
+}
+
+.hamburger-menu.open {
+	background-color: gray;
+	display: inline-block;
+	width: auto;
+	transition: background-color 1s;
+	box-shadow: 5px 5px 10px grey;
+}
+
+.hamburger-menu {
+	padding: 20px 0 0;
+	width: 40px;
+}
+
+
+/**
+ * Hamburger Menu Items
+ */
+
+.hamburger-menu__items {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.hamburger-menu__item {
+	padding: 10px 30px;
+	cursor: pointer;
+	color: white;
+	font-family: sans-serif;
+	font-size: 22px;
+	transition: background-color 0.2s;
+}
+
+.hamburger-menu__item:hover {
+	background-color: darkgray;
+}
+
+@keyframes leftX {
+	100% {
+		top: 5px;
+		transform: rotate(-45deg);
+	}
+}
+
+@keyframes rightX {
+	100% {
+		top: 5px;
+		transform: rotate(45deg);
+	}
+}
+
+
+@keyframes resetLeft {
+	0% {
+		top: 5px;
+		transform: rotate(45deg);
+	}
+	100% {
+		transform: rotate(0deg);
+		top: 20px;
+	}
+}
+
+@keyframes resetRight {
+	0% {
+		top: 5px;
+		transform: rotate(-45deg);
+	}
+	100% {
+		transform: rotate(0deg);
+		top: 0;
+	}
 }
 
 

@@ -290,7 +290,7 @@ p {
 
 .footer {
 	background-color: lightgray;
-	padding: 50px 10px;
+	padding: 80px 10px 0;
 }
 
 .footer__links {
@@ -301,7 +301,7 @@ p {
 	list-style: none;
 }
 
-.footer__link {
+.footer__link-wrap {
 	display: block;
 	color: #333;
 	text-decoration: none;
@@ -309,12 +309,7 @@ p {
 	font-family: sans-serif;
 	padding: 6px 8px;
 	background-color: white;
-	cursor: pointer;
-	transition: background-color 0.3s;
-}
-
-.footer__link:hover {
-	background-color: #eee;
+	transition: opacity 0.3s, background-color 0.3s;
 }
 
 .footer__link-box {
@@ -332,7 +327,7 @@ p {
 	right: 0;
 }
 
-.footer__link-wrap {
+.footer__link {
 	height: 100px;
 	width: 100px;
 	margin: -40px auto 70px;
@@ -340,33 +335,14 @@ p {
 	border-radius: 50%;
 	border: 2px solid lightgray;
 	background: linear-gradient(to left bottom, lightgray, #555 60%);
-	box-shadow: 0 5px 10px #333;
-	animation: float 2s infinite linear;
+	transition: box-shadow 0.3s;
 }
 
-.footer__link-wrap:hover {
-}
-
-.footer__link-wrap i {
+.footer__link i {
 	font-size: 50px;
 	margin-top: 25px;
 	color: white;
 }
-
-@keyframes float {
-	0% {
-		box-shadow: 0 5px 10px #333;
-	}
-	
-	50% {
-		box-shadow: 0 10px 15px #333;
-	}
-
-	100% {
-		box-shadow: 0 5px 10px #333;
-	}
-}
-
 
 /*
  *---------------------------
@@ -775,32 +751,51 @@ p {
  	 *---------------------------
 	*/
 
+	.footer {
+		padding: 80px 0 0;
+	}
 
-	.footer__link-wrap {
-		height: 200px;
-		width: 200px;
+	.footer__link {
 		margin: 0 auto 30px;
 		float: none;
+		display: block;
 	}
 
 	.footer__links {
 		display: flex;
 	}
 
+	.footer__link:hover {
+		box-shadow: 0 3px 10px #777;
+	}
+	
+	.footer__link-wrap {
+		opacity: 0;
+	}
+
+	.footer__link:hover ~ .footer__link-wrap {
+		background-color: #eee;
+		opacity: 1;
+	}
+
+	.footer__link-box {
+		margin-bottom: 0;
+	}
+
 	.footer__link-box:nth-child(2):before,
 	.footer__link-box:nth-child(2):after {
 		content: '';
-		height: 100px;
+		height: 80px;
 		width: 1px;
 		display: inline-block;
 		position: absolute;
-		top: 25%;
+		top: 12%;
 		background-color: gray;
 	}
 
-	.footer__link-wrap i {
-		font-size: 100px;
-		margin-top: 50px;
+	.footer__link i {
+		font-size: 40px;
+		margin-top: 33px;
 	}
 
 	/*

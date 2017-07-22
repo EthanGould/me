@@ -591,11 +591,11 @@ p {
 
 .hamburger-menu__items {
 	transition: all 2s;
-	display: none;
+	opacity: 0;
 }
 
 .open .hamburger-menu__items {
-	display: block;
+	opacity: 1;
 }
 
 .hamburger-menu.open {

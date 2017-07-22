@@ -346,7 +346,7 @@ p {
  * clock sample
  */
 
-.clock {
+.analog-clock {
 	width: 220px;
 	height: 220px;
 	border: 3px solid black;
@@ -356,7 +356,7 @@ p {
 	background: radial-gradient(white 20%, lightgray 50%, darkgray 70%);
 }
 
-.clock-hands {
+.analog-clock-hands {
 	position: relative;
 	margin: 10px 0 10px 10px;
 	width: 200px;
@@ -364,7 +364,7 @@ p {
 	border-radius: 50%;
 }
 
-.clock-hands:after {
+.analog-clock-hands:after {
 	display: inline-block;
 	content: "";
 	width: 10px;
@@ -378,7 +378,7 @@ p {
 }
 
 
-.clock-arm {
+.analog-clock-arm {
 	display: inline-block;
 	position: absolute;
 	top: 50%;
@@ -389,20 +389,20 @@ p {
 	transform-origin: 100%;
 }
 
-.clock-arm.seconds {
+.analog-clock-arm.seconds {
 	background-color: tomato;
 	z-index: 2;
 }
 
-.clock-arm.minutes {
+.analog-clock-arm.minutes {
 	background-color: #8f8f8f;
 }
 
-.clock-arm.hours {
+.analog-clock-arm.hours {
 	background-color: black;
 }
 
-.clock-arm.hours:after {
+.analog-clock-arm.hours:after {
 	display: block;
 	content: '';
 	background-color: gray;

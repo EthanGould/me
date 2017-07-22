@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="styles/lib/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="styles/main.css">
-  <script type="text/javascript" src="scripts/main.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles/timer.css">
 </head>
 <body>
 	<div class="site-container">
@@ -129,12 +129,97 @@
 
         <div class="sample">
           <div class="sample-title"><h2>Analog Clock</h2></div>
-          <div class="clock">
-            <div class="clock-hands">
-              <span class="seconds clock-arm"></span>
-              <span class="minutes clock-arm"></span>
-              <span class="hours clock-arm"></span>
+          <div class="analog-clock">
+            <div class="analog-clock-hands">
+              <span class="seconds analog-clock-arm"></span>
+              <span class="minutes analog-clock-arm"></span>
+              <span class="hours analog-clock-arm"></span>
             </div>
+          </div>
+        </div>
+
+        <div class="sample">
+            <div class="sample-title"><h2>Timer</h2> (Time elapsed since page load)</div>
+          <div class="clock">
+            <!-- Hours -->
+            <ul class="clock__slot js-hour-left" data-max="5">
+              <li class="clock__number">0</li>
+              <li class="clock__number">1</li>
+              <li class="clock__number">2</li>
+              <li class="clock__number">3</li>
+              <li class="clock__number">4</li>
+              <li class="clock__number">5</li>
+              <li class="clock__number">6</li>
+              <li class="clock__number">7</li>
+              <li class="clock__number">8</li>
+              <li class="clock__number">9</li>
+            </ul>
+            <ul class="clock__slot js-hour-right" data-next-slot="hourLeft" data-max="9">
+              <li class="clock__number">0</li>
+              <li class="clock__number">1</li>
+              <li class="clock__number">2</li>
+              <li class="clock__number">3</li>
+              <li class="clock__number">4</li>
+              <li class="clock__number">5</li>
+              <li class="clock__number">6</li>
+              <li class="clock__number">7</li>
+              <li class="clock__number">8</li>
+              <li class="clock__number">9</li>
+            </ul>
+            <span class="clock__colon">:</span>
+
+            <!-- Minutes -->
+            <ul class="clock__slot js-minute-left" data-next-slot="hourRight" data-max="5">
+              <li class="clock__number">0</li>
+              <li class="clock__number">1</li>
+              <li class="clock__number">2</li>
+              <li class="clock__number">3</li>
+              <li class="clock__number">4</li>
+              <li class="clock__number">5</li>
+              <li class="clock__number">6</li>
+              <li class="clock__number">7</li>
+              <li class="clock__number">8</li>
+              <li class="clock__number">9</li>
+            </ul>
+            <ul class="clock__slot js-minute-right" data-next-slot="minuteLeft" data-max="9">
+              <li class="clock__number">0</li>
+              <li class="clock__number">1</li>
+              <li class="clock__number">2</li>
+              <li class="clock__number">3</li>
+              <li class="clock__number">4</li>
+              <li class="clock__number">5</li>
+              <li class="clock__number">6</li>
+              <li class="clock__number">7</li>
+              <li class="clock__number">8</li>
+              <li class="clock__number">9</li>
+            </ul>
+            <span class="clock__colon">:</span>
+
+            <!-- Seconds -->
+            <ul class="clock__slot js-second-left" data-next-slot="minuteRight" data-max="5">
+              <li class="clock__number">0</li>
+              <li class="clock__number">1</li>
+              <li class="clock__number">2</li>
+              <li class="clock__number">3</li>
+              <li class="clock__number">4</li>
+              <li class="clock__number">5</li>
+              <li class="clock__number">6</li>
+              <li class="clock__number">7</li>
+              <li class="clock__number">8</li>
+              <li class="clock__number">9</li>
+            </ul>
+            <ul class="clock__slot js-second-right" data-next-slot="secondLeft" data-max="9">
+              <li class="clock__number">0</li>
+              <li class="clock__number">1</li>
+              <li class="clock__number">2</li>
+              <li class="clock__number">3</li>
+              <li class="clock__number">4</li>
+              <li class="clock__number">5</li>
+              <li class="clock__number">6</li>
+              <li class="clock__number">7</li>
+              <li class="clock__number">8</li>
+              <li class="clock__number">9</li>
+            </ul>
           </div>
         </div>
 
@@ -192,5 +277,9 @@
     </footer>
 
   </div><!-- site-container -->
+
+  <script type="text/javascript" src="scripts/main.js"></script>
+  <script type="text/javascript" src="scripts/timer.js"></script>
+
 </body>
 </html>

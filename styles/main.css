@@ -28,6 +28,10 @@ body {
 	--header-text: white;
 }
 
+.content-header__text {
+
+}
+
 .content-card {
 	--card-shadow: 3px 3px 5px #333;
 }
@@ -46,6 +50,7 @@ body {
 
 .site-header__img {
 	--header-img-shadow: 0 2px 5px black;
+	--header-img: url('../images/ethan-profile-pic.png');
 }
 
 .project-detail {
@@ -100,9 +105,65 @@ body[data-theme="light"] .footer__link {
 
 body[data-theme="light"] .site-header__img {
 	--header-img-shadow: 0 2px 5px #979696;
+	--header-img: url('../images/ethan-profile-pic4.jpg');
 }
 
 body[data-theme="light"] .project-detail {
+	--detail-background: white;
+}
+
+
+
+/**
+ * Lobster theme
+ */
+body[data-theme="poptart"] {
+	--site-background: radial-gradient(white, #00008b);
+}
+
+body[data-theme="poptart"] .site-header {
+	--header-bottom: lightgreen;
+	--header-shadow: 2px 2px 8px #666666;
+}
+
+body[data-theme="poptart"] .site-header-top {		
+	--header-top: #4ec04e;
+}
+
+body[data-theme="poptart"] .site-header-top {
+	--site-background: radial-gradient(darkgrey, white);
+}
+
+body[data-theme="poptart"] .site-header__name {
+	--site-name: black;
+}
+
+body[data-theme="poptart"] .content-header__text {
+	--header-text: #efbbfc;
+}
+
+body[data-theme="poptart"] .content-card {
+	--card-shadow: 1px 1px 20px lightgrey;
+}
+
+body[data-theme="poptart"] .contact-list__btn {
+	--contact-color: #efbbfc;
+}
+
+body[data-theme="poptart"] .footer {
+	--footer-background: linear-gradient(to top, lightgray, transparent);
+}
+
+body[data-theme="poptart"] .footer__link {
+	--footer-link-color: black;
+}
+
+body[data-theme="poptart"] .site-header__img {
+	--header-img-shadow: 0 2px 5px #979696;
+	--header-img: url('../images/ethan-profile-pic3.jpg');
+}
+
+body[data-theme="poptart"] .project-detail {
 	--detail-background: white;
 }
 
@@ -166,9 +227,17 @@ p {
   top: 4px;
   left: 5px;
   border: 1px solid white;
+  content: var(--header-img);
   box-shadow: var(--header-img-shadow);
   transition: all 0.3s;
   z-index: 100;
+}
+
+.site-header__img.hover {
+	animation-name: fadespin;
+	animation-fill-mode: forwards;
+	animation-duration: .5s;
+	animation-timing-function: ease-in-out;
 }
 
 .site-header__img:hover {
@@ -296,6 +365,18 @@ p {
 
 @keyframes spin {
 	to {
+		transform: rotate(1turn);
+	}
+}
+
+
+@keyframes fadespin {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
 		transform: rotate(1turn);
 	}
 }
@@ -943,6 +1024,7 @@ p {
 		width: 70%;
     font-size: 20px;
     margin: 0px 15% 0 0;
+    color:;
 	}
 }
 

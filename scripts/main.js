@@ -86,6 +86,12 @@ document.addEventListener('DOMContentLoaded', function() {
 	module.toggleTheme = function() {
 		var theme = this.dataset.theme;
 		document.body.dataset.theme = theme;
+
+		var image = document.querySelector('.js-header-img');
+		image.classList.add('hover');
+		setTimeout(function() {
+			image.classList.remove('hover');
+		}, 500);
 	}
 
 	/**

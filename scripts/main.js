@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		module.shareToolsBtn = document.querySelector('.js-share-btn');
 		module.siteHeader = document.querySelector('.js-site-header');
 		module.hamburgerMenu = document.querySelector('.hamburger');
+		module.themeOption = document.querySelectorAll('.js-theme-item');
 
 		module.updateClock();
 		module.eventHandlers();
@@ -23,6 +24,9 @@ document.addEventListener('DOMContentLoaded', function() {
 		module.shareToolsBtn.addEventListener('mouseenter', module.showShareTools);
 		module.shareTools.addEventListener('mouseleave', module.hideShareTools);
 		module.hamburgerMenu.addEventListener('click', module.toggleHamburger);
+		module.themeOption.forEach(function(el) {
+			el.addEventListener('click', module.toggleTheme);
+		});
 		window.addEventListener('scroll', module.scaleHeader);
 	}
 
@@ -74,6 +78,14 @@ document.addEventListener('DOMContentLoaded', function() {
 		document
 			.querySelector('.hamburger-menu')
 			.classList.toggle('open');
+	}
+
+	/**
+	 * Toggle the site theme
+	 */
+	module.toggleTheme = function() {
+		var theme = this.dataset.theme;
+		document.body.dataset.theme = theme;
 	}
 
 	/**

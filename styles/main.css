@@ -313,7 +313,7 @@ p {
 	transform: translateX(0%);
 }
 
-.theme-item:hover {
+.theme-item.fly-in:hover {
 	transform: translateX(-10%);
 }
 

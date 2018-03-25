@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		module.shareToolsBtn = document.querySelector('.js-share-btn');
 		module.siteHeader = document.querySelector('.js-site-header');
 		module.hamburgerMenu = document.querySelector('.hamburger');
+		module.themeToggle = document.querySelector('.js-theme-toggle');
 		module.themeOption = document.querySelectorAll('.js-theme-item');
 
 		module.updateClock();
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		module.shareToolsBtn.addEventListener('mouseenter', module.showShareTools);
 		module.shareTools.addEventListener('mouseleave', module.hideShareTools);
 		module.hamburgerMenu.addEventListener('click', module.toggleHamburger);
+		module.themeToggle.addEventListener('click', module.toggleThemes);
 		module.themeOption.forEach(function(el) {
 			el.addEventListener('click', module.toggleTheme);
 		});
@@ -81,6 +83,19 @@ document.addEventListener('DOMContentLoaded', function() {
 	}
 
 	/**
+	 * Toggle the site theme selection panel.
+	 */
+	module.toggleThemes = function() {
+		document.querySelector('.overlay').classList.toggle('fade');
+		// loop over each item and apply the fly in class
+		module.themeOption.forEach(function(t, i) {
+			setTimeout(function() {
+				t.classList.toggle('fly-in');
+			}, i * 70);
+		});
+	}
+
+	/**
 	 * Toggle the site theme
 	 */
 	module.toggleTheme = function() {
@@ -92,6 +107,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		setTimeout(function() {
 			image.classList.remove('hover');
 		}, 500);
+
+		module.toggleThemes();
 	}
 
 	/**

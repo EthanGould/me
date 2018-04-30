@@ -7,10 +7,30 @@ clock.init = function() {
 	clock.minuteRight = document.querySelector('.js-minute-right');
 	clock.secondLeft = document.querySelector('.js-second-left');
 	clock.secondRight = document.querySelector('.js-second-right');
+	clock.colors = document.querySelectorAll('.js-clock-color');
+	clock.clock = document.querySelector('.js-clock');
+	clock.topFade = document.querySelector('.js-top-fade');
+	clock.bottomFade = document.querySelector('.js-bottom-fade');
 
 	clock.totalSeconds = 0;
 	clock.interval = setInterval(clock.start.bind(clock, 'secondRight', true), 1000);
+
+	clock.eventHandlers();
 }
+
+clock.eventHandlers = function() {
+	clock.colors.forEach(function(color) {
+		color.addEventListener('click', clock.changeColor);
+	})
+};
+
+clock.changeColor = function() {
+	var color = event.target.dataset.color;
+	clock.clock.style.background = 'rgba(' + color + ', 0.2)';
+	clock.clock.style.boxShadow = '0 0 15px rgb(' + color + ')';
+	clock.topFade.style.background = 'linear-gradient( rgb(' + color + '), rgba(' + color + ', 0.1) 90%, transparent)';
+	clock.bottomFade.style.background = 'linear-gradient( transparent, rgba(' + color + ', 0.8) 90%, rgb(' + color +'))';
+};
 
 clock.stop = function() {
 	clearInterval(clock.interval);

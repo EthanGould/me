@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		module.siteHeader = document.querySelector('.js-site-header');
 		module.hamburgerMenu = document.querySelector('.hamburger');
 		module.themeToggle = document.querySelector('.js-theme-toggle');
+		module.themeList = document.querySelector('.js-theme-list');
 		module.themeOption = document.querySelectorAll('.js-theme-item');
 
 		module.updateClock();
@@ -22,9 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	 * Attach event listeners to DOM.
 	 */
 	module.eventHandlers = function() {
-		module.shareToolsBtn.addEventListener('mouseenter', module.showShareTools);
-		module.shareTools.addEventListener('mouseleave', module.hideShareTools);
-		module.hamburgerMenu.addEventListener('click', module.toggleHamburger);
+		// module.shareToolsBtn.addEventListener('mouseenter', module.showShareTools);
+		// module.shareTools.addEventListener('mouseleave', module.hideShareTools);
+		// module.hamburgerMenu.addEventListener('click', module.toggleHamburger);
 		module.themeToggle.addEventListener('click', module.toggleThemes);
 		module.themeOption.forEach(function(el) {
 			el.addEventListener('click', module.toggleTheme);
@@ -67,6 +68,13 @@ document.addEventListener('DOMContentLoaded', function() {
 					minutesHand = document.querySelector('.minutes'),
 					hourHand = document.querySelector('.hours');
 
+			if (seconds == 0) {
+				secondsHand.style.transition = 'none';
+				setTimeout(function() {
+					secondsHand.style.transition = 'all 0.1s cubic-bezier(0.42, 0, 0, 2.48)';
+				}, 500);
+			}
+
 			secondsHand.style.transform = 'rotate(' + seconds + 'deg)';
 			minutesHand.style.transform = 'rotate(' + minutes + 'deg)';
 			hourHand.style.transform = 'rotate(' + hour + 'deg)';
@@ -87,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	 */
 	module.toggleThemes = function() {
 		document.querySelector('.overlay').classList.toggle('fade');
+		module.themeList.classList.toggle('visible');
 		// loop over each item and apply the fly in class
 		module.themeOption.forEach(function(t, i) {
 			setTimeout(function() {

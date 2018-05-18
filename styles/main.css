@@ -587,6 +587,7 @@ p {
 .project-detail-img {
 	width: 100%;
 	border: 1px solid grey;
+	transition: opacity 1s;
 }
 
 .projects-card-title {
@@ -1227,6 +1228,8 @@ p {
 	}
 
 	.project-detail-img {
+		height: 300px;
+		overflow: hidden;
 		width: 130%;
 		margin-left: -15%;
 	}

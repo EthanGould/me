@@ -20,16 +20,13 @@ body {
 	--header-top: #333;
 }
 
+.theme-toggle svg,
 .site-header__name {
 	--site-name: white;
 }
 
 .content-header__text {
 	--header-text: white;
-}
-
-.content-header__text {
-
 }
 
 .content-card {
@@ -79,6 +76,7 @@ body[data-theme="light"] .site-header-top {
 	--site-background: radial-gradient(darkgrey, white);
 }
 
+body[data-theme="light"] .theme-toggle svg,
 body[data-theme="light"] .site-header__name {
 	--site-name: black;
 }
@@ -127,7 +125,7 @@ body[data-theme="poptart"] .site-header {
 	--header-shadow: 2px 2px 8px #666666;
 }
 
-body[data-theme="poptart"] .site-header-top {		
+body[data-theme="poptart"] .site-header-top {
 	--header-top: #4ec04e;
 }
 
@@ -135,6 +133,7 @@ body[data-theme="poptart"] .site-header-top {
 	--site-background: radial-gradient(darkgrey, white);
 }
 
+body[data-theme="poptart"] .theme-toggle svg,
 body[data-theme="poptart"] .site-header__name {
 	--site-name: black;
 }
@@ -253,16 +252,28 @@ p {
 	opacity: 0;
 }
 
-.theme-toggle,
 .theme-item {
 	font-family: 'Ubuntu', sans-serif;
 }
 
 .theme-toggle {
 	position: absolute;
-	right: 0;
-	top: 0;
-	margin: 5px 10px 0 0;
+	right: 10px;
+	top: 15px;
+	height: 30px;
+	transition: top 0.3s, right 0.3s;
+}
+
+.theme-toggle:hover {
+	transform: rotate(180deg);
+	transition: transform 0.5s;
+}
+
+.theme-toggle svg {
+	width: 30px;
+	cursor: pointer;
+	transition: fill 0.5s;
+	fill: var(--site-name);
 }
 
 .theme-list {
@@ -296,15 +307,6 @@ p {
 
 .overlay.fade {
 	opacity: 0.9;
-}
-
-.theme-toggle {
-	padding: 3px 5px;
-	border: black;
-	background-color: white;
-	cursor: pointer;
-	border-radius: 5px;
-	border: 1px solid gray;
 }
 
 .theme-item {
@@ -584,10 +586,19 @@ p {
 	padding: 20px;
 }
 
+.project-detail-list-item {
+	margin-bottom: 10px;
+}
+
 .project-detail-img {
 	width: 100%;
 	border: 1px solid grey;
-	transition: opacity 1s;
+	opacity: 1;
+	transition: opacity 0.5s;
+}
+
+.project-detail-img.fade {
+	opacity: 0;
 }
 
 .projects-card-title {
@@ -1043,6 +1054,17 @@ p {
 		-webkit-box-reflect: below -7px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(70%, transparent), to(rgba(250, 250, 250, 0.5)));
 	}
 
+	.site-header.minimize .theme-toggle {
+		top: 5px;
+		right: 20px;
+	}
+	
+	.theme-toggle {
+		top: 25px;
+		right: 25px;
+	}
+
+
 	/*
  	 *---------------------------
  	 * /SITE HEADER
@@ -1228,7 +1250,7 @@ p {
 	}
 
 	.project-detail-img {
-		height: 300px;
+		height: 320px;
 		overflow: hidden;
 		width: 130%;
 		margin-left: -15%;

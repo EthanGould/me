@@ -46,10 +46,16 @@ slider.transitionContent = function() {
 	slider.transitionSlides.forEach(function(slide) {
 		var slideImgs = slide.getAttribute('data-src').split(',');
 		this.nextSlideIndex = 0;
+		// fade first slide before subsequent setTimeout is triggered
+		setTimeout(function() {
+			slide.classList.add('fade');
+		}, 3000);
+
+		// Transition to next image using .fade class
 		setInterval(function() {
-			slide.style.opacity = 1;
+			slide.classList.remove('fade');
 			setTimeout(function() {
-				slide.style.opacity = 0;
+				slide.classList.add('fade');
 			}, 3000);
 
 			if (this.nextSlideIndex + 1 < slideImgs.length) {
@@ -60,7 +66,7 @@ slider.transitionContent = function() {
 			}
 			console.log('next slide', slideImgs[this.nextSlideIndex]);
 			slide.src = slideImgs[this.nextSlideIndex];
-		}, 4000);
+		}, 3500);
 		console.log('slide data', slideImgs);
 	});
 }

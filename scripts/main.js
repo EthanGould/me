@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
 	 * Attach event listeners to DOM.
 	 */
 	module.eventHandlers = function() {
-		// module.shareToolsBtn.addEventListener('mouseenter', module.showShareTools);
-		// module.shareTools.addEventListener('mouseleave', module.hideShareTools);
+		module.shareToolsBtn.addEventListener('mouseenter', module.showShareTools);
+		module.shareTools.addEventListener('mouseleave', module.hideShareTools);
 		// module.hamburgerMenu.addEventListener('click', module.toggleHamburger);
 		module.themeToggle.addEventListener('click', module.toggleThemes);
 		module.themeOption.forEach(function(el) {

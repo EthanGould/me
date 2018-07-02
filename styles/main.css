@@ -359,7 +359,8 @@ p {
 .site-content {
 	margin-top: 100px;
 	padding: 5px 5px;
-	overflow: auto;
+	transform-style: preserve-3d;
+	transform: perspective(1000px);
 }
 
 .content-header {
@@ -392,14 +393,48 @@ p {
 
 .content-card {
 	width: 95%;
-	box-shadow: var(--card-shadow);
 	padding: 10px;
+	box-shadow: var(--card-shadow);
 	margin: 0 auto 15px auto;
 	display: table;
 	font-family: 'Ubuntu', sans-serif;
 	font-size: 14px;
 	box-sizing: border-box;
 	background-color: white;
+	overflow: hidden;
+}
+
+.zoom {
+	opacity: 0;
+	transition: transform 0.5s, opacity 0.5s;
+	animation: zoom 1s;
+	animation-fill-mode: forwards;
+}
+
+#js,
+#sass,
+#salesforce,
+#wordpress {
+	padding: 0;
+}
+
+#js .skillset__header {
+	background-color: rgba(230,230,10,1);
+}
+
+#sass .skillset__header {
+	background-color: rgba(255,74,141,1);
+	color: white;
+}
+
+#salesforce .skillset__header {
+	background-color: rgba(0,192,255,1);
+	color: white;
+}
+
+#wordpress .skillset__header {
+	background-color: black;
+	color: white;
 }
 
 /*
@@ -489,7 +524,7 @@ p {
 
 .info-content {
 	color: grey;
-	line-height: 20px;
+	line-height: 24px;
 }
 
 .info-content a {
@@ -500,31 +535,39 @@ p {
  * skillset Card
 */
 
-.skillset-card {
+.skillset__card {
 	clear: both;
 }
 
-.skillset-examples {
-	padding-left: 100px;
-	margin: 0;
-}
-
-.skillset-detail {
-	padding: 10px 0;
+.skillset__examples {
 	float: left;
+	margin: 0;
+	padding: 10px 30px;
+	list-style-type: circle;
 }
 
-.skillset-detail svg {
+.skillset__examples svg {
 	width: 70px;
 	float: left;
 }
 
-.skillset-img {
-	width: 50px;
-	border-radius: 10px;
+.skillset__header {
+	border-bottom: 1px solid gray;
+	transition: transform 0.3s;
+}
+
+.skillset__header svg {
+	width: 30px;
 	float: left;
 }
 
+.skillset__header-text {
+	padding: 5px 0;
+	font-size: 16px;
+	text-align: center;
+	font-style: italic;
+	transition: transform 0.3s;
+}
 
 /*
  * Projects Slider
@@ -1146,10 +1189,6 @@ p {
 		margin-right: 2%;
 	}
 
-	.project-detail-list {
-		min-height: 120px;
-	}
-
 	/*
 	 * Samples
 	*/
@@ -1181,6 +1220,23 @@ p {
 }
 
 @media (min-width: 960px) {
+
+	.project-detail-list {
+		min-height: 120px;
+	}
+
+	.content-card--left {
+		width: 46.5%;
+		margin: 0 1% 15px 2.5%;
+		float: left;
+	}
+
+	.content-card--right {
+		width: 46.5%;
+		margin: 0 2.5% 15px 1%;
+		float: left;
+	}
+
 	.slider {
 		width: 800px;
 	}
@@ -1271,3 +1327,18 @@ p {
 	}
 }
 
+@keyframes zoom {
+	0% {
+		opacity: 0;
+		transform: perspective(10px) translateZ(-20px);
+	}
+
+	25% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+		transform: perspective(0) translateZ(0);
+	}
+}

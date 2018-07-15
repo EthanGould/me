@@ -525,6 +525,8 @@ p {
 .info-content {
 	color: grey;
 	line-height: 24px;
+	animation-name: rise;
+	animation-duration: 1s;
 }
 
 .info-content a {
@@ -544,6 +546,12 @@ p {
 	margin: 0;
 	padding: 10px 30px;
 	list-style-type: circle;
+	transform: translateY(25%);
+	opacity: 0;
+	animation-fill-mode: forwards;
+	animation-name: rise;
+	animation-duration: 0.5s;
+	animation-delay: .5s;
 }
 
 .skillset__examples svg {
@@ -576,6 +584,8 @@ p {
 .slider {
 	margin: 0 auto;
 	position: relative;
+	animation-name: rise;
+	animation-duration: 1s;
 }
 
 .slider-window {
@@ -1342,3 +1352,19 @@ p {
 		transform: perspective(0) translateZ(0);
 	}
 }
+
+@keyframes rise {
+	from {
+		transform: translateY(25%);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+
+
+
